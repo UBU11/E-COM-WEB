@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerds Anime Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header1">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to Nerds Anime Shop</h1>
+            <p>Your one-stop destination for premium anime merchandise.</p>
+            <a href="#shop" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="shop">
+        <div class="product-listings" id="productListings">
+            <!-- Product cards go here -->
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-section">
+            <!-- Include company information, mission statement, and contact information -->
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="blog-section" id="blogSection">
+            <!-- Include blog previews -->
+         
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <!-- Include a form or contact information -->
+        </div>
+    </section>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+            max-width: 300px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #cart {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+          background: url("https://i.pinimg.com/736x/7a/0d/c2/7a0dc24f568b81a39ba1ce797f65d355.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart-total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #video-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+   <div class="gif">
+    <header class="header2">
+        <h1>Nerds World</h1>
+    </header>
+     </div>
+    <main>
+        <!-- Product 1 -->
+        <div class="product" id="product1">
+            <img src="https://images.goodsmile.info/cgm/images/product/20210803/11615/88697/large/5f21241c6ef114d127325c77d7753ac2.jpg" alt="Product 1">
+            <div class="product-info">
+                <h2>Eren Yeager Figure</h2>
+                <p>Description of Product 1.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+
+       >
+        <div id="cart">
+            <h2 class="Total">Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p class="Total">Total: $<span id="cart-total">0.00</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </main>
+
+    <div id="video-container">
+        <iframe width="1600" height="315" src="https://player.vimeo.com/external/428846446.sd.mp4?s=fda4f60dd749e6a81147a22777df3543ac01c64d&profile_id=164&oauth2_token_id=57447761" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+
+    <script>
+        let cartItems = [];
+
+        function addToCart(productName, price) {
+            cartItems.push({ name: productName, price: price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name}: $${item.price.toFixed(2)}`;
+                cartList.appendChild(listItem);
+                total += item.price;
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            // Implement checkout logic here
+            alert('Checkout functionality is not implemented in this example.');
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+            max-width: 300px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #cart {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart-total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #video-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <!-- Product 1 -->
+        <div class="product" id="product1">
+            <img src="product1.jpg" alt="Product 1">
+            <div class="product-info">
+                <h2>Product 1</h2>
+                <p>Description of Product 1.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Repeat similar sections for other products -->
+
+        <!-- Shopping Cart -->
+        <div id="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </main>
+
+    <!-- Dynamic Video -->
+    <div id="video-container">
+        <iframe width="1600" height="400
+          " src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  <main>
+      <!-- Product 1 -->
+      <div class="product" id="product1">
+          <img src="product1.jpg" alt="Product 1">
+          <div class="product-info">
+              <h2>Product 1</h2>
+              <p>Description of Product 1.</p>
+              <p>$19.99</p>
+              <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+          </div>
+      </div>
+
+      <!-- Repeat similar sections for other products -->
+
+      <!-- Shopping Cart -->
+      <div id="cart">
+          <h2>Shopping Cart</h2>
+          <ul id="cart-items"></ul>
+          <p>Total: $<span id="cart-total">0.00</span></p>
+          <button onclick="checkout()">Checkout</button>
+      </div>
+  </main>
+
+  <!-- Dynamic Video -->
+  <div id="video-container">
+      <iframe width="1600" height="400
+        " src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+
+  <footer>
+      <div class="footer-content">
+          <div class="footer-section about">
+              <h2>About Us</h2>
+              <p>Welcome to Nerds Anime Shop, your go-to destination for premium anime merchandise. Since 2023, our mission has been clear: to create a haven for anime enthusiasts worldwide.</p>
+              <!-- ... (rest of the about content) ... -->
+          </div>
+
+          <div class="footer-section privacy">
+              <h2>Privacy Policy</h2>
+              <p>Learn about how we handle your data and ensure your privacy while using our website.</p><br>
+      
+          </div>
+        <p>&copy; 2023 Nerds Anime Shop. All rights reserved. | Designed by Your Name</p>
+    
+      </div>
+  </footer>
+
+ 
+
+
+    <script>
+        let cartItems = [];
+
+        function addToCart(productName, price) {
+            cartItems.push({ name: productName, price: price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name}: $${item.price.toFixed(2)}`;
+                cartList.appendChild(listItem);
+                total += item.price;
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            // Implement checkout logic here
+            alert('Checkout functionality is not implemented in this example.');
+        }
+    </script>
+
+</body>
+</html>

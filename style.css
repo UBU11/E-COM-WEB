@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#a8dadc,#1d3557);
+}
+
+.header2{
+    background-color: #333;
+    padding: 10px;
+  background-image: url('https://i.pinimg.com/originals/19/db/83/19db83b65349b559634e9c46ddd10e7b.gif');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.header1 {
+    background-color: #333;
+    padding: 20px;
+  margin-bottom: 6px;
+  background-image: url('https://i.pinimg.com/originals/6c/18/42/6c18426dc24560eefb233dd79019ca89.gif');
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   display: flex;
+  align-items: flex-end;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('https://64.media.tumblr.com/cebc8f28b4725d8432e93d76525b7e08/tumblr_om1d6yRCgu1vy2tgqo10_1280.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    color: #fff;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff1744;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.product-card {
+    /* Style your product cards */
+}
+.hidden {
+    display: none;
+}
+.Total{
+  color: white;
+}
