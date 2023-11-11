@@ -3,7 +3,7 @@ ONGOING
 
 
 Team Nerds
-Uvais J
-Varun KD
-Eva A
+Uvais J,
+Varun KD,
+Eva A,
 Tharessa J
